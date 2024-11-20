@@ -1,6 +1,7 @@
 package com.westeros.moviesclient;
 
 import com.westeros.moviesclient.contract.*;
+import com.westeros.moviesclient.contract.ActorDto;
 
 import java.time.LocalDate;
 
@@ -33,7 +34,7 @@ public interface IMoviesClient {
      * @param id id filmu
      * @return film
      */
-    MovieDto getMovie(int id);
+    MovieDto getMovie(long id);
 
     /**
      * zwraca informacje o aktorach i zalodze, która brała udział przy tworzeniu filmu o zadanym id
@@ -42,7 +43,7 @@ public interface IMoviesClient {
      * @param id
      * @return
      */
-    CreditsDto getCredits(int id);
+    CreditsDto getCredits(long id);
 
     /**
      * Zwraca szczegółowe informacje o aktorze o zadanym id
@@ -51,5 +52,5 @@ public interface IMoviesClient {
      * @param id id aktora
      * @return informacje o aktorze
      */
-    ActorDto getActorDetails(int id);
+    ActorDto getActorDetails(long id);
 }

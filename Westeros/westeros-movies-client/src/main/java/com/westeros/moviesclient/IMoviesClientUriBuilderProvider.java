@@ -9,19 +9,19 @@ public interface IMoviesClientUriBuilderProvider {
      * -> utwórz darmowe konto i sprawdź w ustawieniach konta wartość klucza
      * @return klucz do api
      */
-     String getApiKey();
+     String apiKey();
 
     /**
      * Ten getter zwraca adres bazowy do api api.themoviedb.org
      * @return
      */
-    String getHost();
+    String host();
 
     /**
      * zwraca wersję api - domyślnie 3
      * @return
      */
-    int getApiVersion();
+    int apiVersion();
 
 
     /**
@@ -32,8 +32,8 @@ public interface IMoviesClientUriBuilderProvider {
     default UriComponentsBuilder builder(){
         return UriComponentsBuilder.newInstance()
                 .scheme("http")
-                .host(getHost())
-                .pathSegment(getApiVersion()+"")
-                .queryParam("api_key", getApiKey());
+                .host(host())
+                .pathSegment(apiVersion()+"")
+                .queryParam("api_key", apiKey());
     }
 }

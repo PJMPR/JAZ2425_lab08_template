@@ -1,6 +1,7 @@
 package com.westeros.moviesclient;
 
 import com.westeros.moviesclient.contract.*;
+import com.westeros.moviesclient.contract.ActorDto;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
@@ -26,7 +27,7 @@ public class MoviesClient implements IMoviesClient {
     }
 
     @Override
-    public MovieDto getMovie(int id) {
+    public MovieDto getMovie(long id) {
         String url = provider.builder()
                 .pathSegment("movie")
                 .pathSegment(""+id)
@@ -37,12 +38,12 @@ public class MoviesClient implements IMoviesClient {
     }
 
     @Override
-    public CreditsDto getCredits(int id) {
+    public CreditsDto getCredits(long id) {
         return null;
     }
 
     @Override
-    public ActorDto getActorDetails(int id) {
+    public ActorDto getActorDetails(long id) {
         return null;
     }
 }

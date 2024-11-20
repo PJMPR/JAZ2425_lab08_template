@@ -7,6 +7,7 @@ import com.westeros.moviesclient.MoviesClientUriBuilderProvider;
 import com.westeros.moviesclient.contract.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -29,39 +30,39 @@ public class Main {
         /**
          * pobieram pierwszą strone wyników filmów które zostały wyprodukowane w zeszłym miesiącu
          */
-        PagedResultDto result = moviesClient.getByDateRange(from, to);
-        var movies = result.getResults();
+//        PagedResultDto result = moviesClient.getByDateRange(from, to);
+//        var movies = result.movies();
 
         /**
          * pobieram wszystkie strony wyników
          */
-//        for (int page = 1; page <= result.getTotalPages(); page++){
-//            movies.addAll(moviesClient.getByDateRange(from, to, page).getResults());
+//        for (int page = 1; page <= result.totalPages(); page++){
+//            movies.addAll(moviesClient.getByDateRange(from, to, page).movies());
 //        }
 //        var detailedMovies = new ArrayList<MovieDto>();
 //        var allCredits = new ArrayList<CreditsDto>();
-
+//
 //        for (var movie : movies)
-        {
+//        {
             /**
              * dla każdego filmu pobieram jego szczegóły
              */
-//            MovieDto detailedMovie = moviesClient.getMovie(movie.getId());
+//            MovieDto detailedMovie = moviesClient.getMovie(movie.id());
 //            detailedMovies.add(detailedMovie);
 
             /**
              * dla każdego filmu pobieram informacje o zespole i aktorach, który tworzył dany film
              */
-//            CreditsDto credits = moviesClient.getCredits(movie.getId());
+//            CreditsDto credits = moviesClient.getCredits(movie.id());
 //            allCredits.add(credits);
 
             /**
              * dla każdego aktora pobieram jego szczegółowe informacje
              */
 //            for (var actorSummary :
-//                    credits.getCast()) {
-//                ActorDto detailedActor = moviesClient.getActorDetails(actorSummary.getId());
+//                    credits.cast()) {
+//                ActorDto detailedActor = moviesClient.getActorDetails(actorSummary.id());
 //            }
-        }
+//        }
     }
 }
