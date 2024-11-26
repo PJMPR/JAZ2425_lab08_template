@@ -8,7 +8,7 @@ public record MovieDto(
          boolean adult,
          String backdropPath,
          int budget,
-         List<GenreSummaryDto> genres,
+         List<Dictionaries.GenreDto> genres,
          String homepage,
          String originalLanguage,
          String originalTitle,
@@ -16,16 +16,14 @@ public record MovieDto(
          double popularity,
          String posterPath,
          List<CompanySummaryDto> productionCompanies,
-         List<CountrySummaryDto> productionCountries,
+         List<Dictionaries.CountryDto> productionCountries,
          LocalDate releaseDate,
          int runtime,
-         List<LanguageSummaryDto> spokenLanguages,
+         List<Dictionaries.LanguageDto> spokenLanguages,
          int voteCount,
          double voteAverage
         
 ) {
-    public record GenreSummaryDto(int id, String name){}
-    public record CountrySummaryDto(String name, String isoCode){}
-    public record LanguageSummaryDto(String name, String englishName, String isoCode){}
+
     public record CompanySummaryDto(int id, String logoPath,String name, String originCountry){}
 }
